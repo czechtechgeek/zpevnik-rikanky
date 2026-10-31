@@ -1,214 +1,264 @@
-/* České říkanky s akordy — data.
+/* České říkanky, táborovky a zahraniční klasika — data.
    Akordy jsou psané inline v textu: [C]text.
-   key = tónina, ve které je píseň napsaná (transpozice se počítá od ní). */
+   Texty a akordy říkanek ověřeny podle zpevnik.beil.cz, spisnickou.cz
+   a akordy.kytary.cz (viz README, sekce Zdroje). */
 window.SONGS = [
+  /* ---------- ŘÍKANKY PRO DĚTI ---------- */
   {
     id: "skakal-pes", title: "Skákal pes", cat: "zvirata", key: "C",
     lines: [
-      "[C]Skákal pes přes [G]oves",
-      "přes zelenou [C]louku,",
-      "[C]šel za ním [F]myslivec",
-      "[C]s puškou [G]na ra[C]meni."
+      "[C]Skákal pes přes oves,",
+      "přes zelenou [G7]louku,",
+      "šel za ním myslivec,",
+      "péro na klo[C]bouku.",
+      "[C]Pejsku náš, co děláš,",
+      "žes tak vesel [G7]stále.",
+      "Řek bych vám, nevím sám.",
+      "Hop – a skákal [C]dále."
     ]
   },
   {
-    id: "pec-nam-spadla", title: "Pec nám spadla", cat: "hry", key: "C",
+    id: "pec-nam-spadla", title: "Pec nám spadla", cat: "hry", key: "D",
     lines: [
-      "[C]Pec nám spadla, pec nám spadla,",
-      "[G]kdo ji po[C]staví?",
-      "[C]Dneska je to [F]naše [C]starost,",
-      "[G]zítra [C]hotová."
+      "[D]Pec nám spadla, pec nám spadla,",
+      "kdopak nám ji [A7]postaví?",
+      "Starý pecař není doma",
+      "a mladý to [D]neumí.",
+      "[D]Zavoláme na dědečka,",
+      "ten má velké [A7]kladivo,",
+      "dá do toho čtyři rány",
+      "a už je to [D]hotovo."
     ]
   },
   {
-    id: "kocka-leze-dirou", title: "Kočka leze dírou", cat: "zvirata", key: "C",
+    id: "kocka-leze-dirou", title: "Kočka leze dírou", cat: "zvirata", key: "D",
     lines: [
-      "[C]Kočka leze [G]dírou,",
-      "pes oknem,",
-      "[C]oba dva se [G]na mě [C]dívaj',",
-      "já si jich [G]nevšim[C]nu."
+      "[D]Kočka leze dírou,",
+      "[G]pes ok[D]nem, [G]pes ok[D]nem.",
+      "[A7]Nebude-li [D]pršet, [A7]nezmok[D]nem,",
+      "[A7]nebude-li [D]pršet, [A7]nezmok[D]nem.",
+      "[D]A když bude pršet,",
+      "[G]zmokne[D]me, [G]zmokne[D]me.",
+      "[A7]Na sluníčku [D]zase [A7]uschne[D]me,",
+      "[A7]na sluníčku [D]zase [A7]uschne[D]me."
     ]
   },
   {
-    id: "ja-mam-kone", title: "Já mám koně", cat: "lidove", key: "C",
+    id: "ja-mam-kone", title: "Já mám koně", cat: "lidove", key: "D",
     lines: [
-      "[C]Já mám koně, [F]vraný [C]koně,",
-      "[G]já mám koně [C]vraný,",
-      "[C]na nich jezdím [F]po [C]polích,",
-      "[G]po loukách [C]zelených."
+      "[D]Já mám [A]koně, [D]vraný [A]koně, [G]to jsou [A]koně [D]mí,",
+      "já mám [A]koně, [D]vraný [A]koně, [G]to jsou [A]koně [D]mí.",
+      "Když já jim dám [A]ovsa, [D]oni skáčou [A]hopsa,",
+      "[D]já mám [A]koně, [D]vraný [A]koně, [G]to jsou [A]koně [D]mí.",
+      "Když já jim dám [A]obroku, [D]oni běží [A]do skoku,",
+      "[D]já mám [A]koně, [D]vraný [A]koně, [G]to jsou [A]koně [D]mí."
     ]
   },
   {
     id: "holka-modrooka", title: "Holka modrooká", cat: "lidove", key: "C",
     lines: [
-      "[C]Holka modrooká, [G]nesedávej u [C]potoka,",
-      "[C]nesedávej [F]u potoka,",
-      "[G]nebo se ti [C]voda zamoutí."
+      "[C]Hol[F]ka [C]modrooká, [G]nesedávej [C]u potoka,",
+      "hol[F]ka [C]modrooká, [G]nesedávej [C]tam.",
+      "[G]V potoce se [C]voda točí, [G]podemele [C]tvoje oči,",
+      "hol[F]ka [C]modrooká, [G]nesedávej [C]tam.",
+      "[G]V potoce je [C]velká voda, [G]vezme-li tě, [C]bude škoda,",
+      "hol[F]ka [C]modrooká, [G]nesedávej [C]tam."
     ]
   },
   {
-    id: "kdyz-jsem-ja-slouzil", title: "Když jsem já sloužil", cat: "lidove", key: "C",
+    id: "kdyz-jsem-ja-slouzil", title: "Když jsem já sloužil", cat: "lidove", key: "D",
     lines: [
-      "[C]Když jsem já sloužil [G]u pána [C]za rok,",
-      "[C]vydělal jsem [F]tolik [C]jako [G]on:",
-      "[C]jednu kravičku, [F]jednu [C]kravičku,",
-      "[G]a ta kravička [C]byla strakatá."
+      "[D]Když jsem já sloužil to první lé[A]to,",
+      "vysloužil jsem si [D]kuřát[A]ko za [D]to.",
+      "A to kuře krákoře běhá po dvo[A]ře,",
+      "má panenka pláče [D]doma v [A]komo[D]ře.",
+      "[D]Když jsem já sloužil to druhé lé[A]to,",
+      "vysloužil jsem si [D]kachnič[A]ku za [D]to.",
+      "A ta kačka bláto tlačká",
+      "a to kuře krákoře běhá po dvo[A]ře,",
+      "má panenka pláče [D]doma v [A]komo[D]ře."
     ]
   },
   {
     id: "andulko-safarova", title: "Andulko šafářova", cat: "lidove", key: "G",
     lines: [
-      "[G]Andulko šafářova, [C]Andulko,",
-      "[D7]kdes ty se [G]toulala?",
-      "[G]Byla jsem v lese [C]na procházce,",
-      "[D7]na louce [G]zelené."
+      "[G]Andulko [D7]šafářo[G]vá,",
+      "husičky [D7]nemáš do[G]ma.",
+      "[G]Husy [D7]jsou v ječme[G]ně,",
+      "Andul[D7]ko, vyžeň [G]je.",
+      "[G]Já bych je [D7]ven vyhna[G]la,",
+      "jen kdybych [D7]se nebá[G]la.",
+      "[G]Paňmá[D7]ma lehce [G]spí,",
+      "jak se [D7]hnu, všechno [G]ví."
     ]
   },
   {
     id: "bezi-liska", title: "Běží liška k Táboru", cat: "zvirata", key: "C",
     lines: [
       "[C]Běží liška k Táboru,",
-      "[G]nese pytel [C]bramborů,",
-      "[C]a za ní [F]jezevec",
-      "[C]s pytlem [G]na ra[C]meni."
+      "nese pytel [G]zázvoru.",
+      "[C]Ježek za ní [G]pospíchá,",
+      "že jí pytel [C]rozpíchá.",
+      "[C]Běž, zajíčku, běž za ní,",
+      "pober jí to [G]koření.",
+      "[C]Liška se mu [G]schovala,",
+      "ještě se mu [C]vysmála."
     ]
   },
   {
-    id: "sla-nanynka", title: "Šla Nanynka do zelí", cat: "lidove", key: "C",
+    id: "sla-nanynka", title: "Šla Nanynka do zelí", cat: "lidove", key: "A",
     lines: [
-      "[C]Šla Nanynka do zelí, do zelí, do zelí,",
-      "[G]natrhala lupení, [C]lupení.",
-      "[C]Přišel za ní [F]Jiříček, [C]Jiříček, [G]Jiříček,",
-      "[C]rozbil jí [G]ten hrne[C]ček."
+      "[A]Šla Nanynka do zelí,",
+      "[E]do zelí, [A]do zelí,",
+      "natrhala lupení,",
+      "[E]lupeníč[A]ka.",
+      "Přišel za ní [E]Pepíček,",
+      "[E]rozšlapal ji [A]košíček.",
+      "Ty, ty, ty! [D]Ty, ty, ty!",
+      "[E]Ty to budeš [A]platiti!"
     ]
   },
   {
     id: "prsi-prsi", title: "Prší, prší", cat: "lidove", key: "C",
     lines: [
-      "[C]Prší, prší, jen se [G]leje,",
-      "[C]kde je ta [F]louže [C]zelená?",
-      "[C]Kdyby byla [F]suchá [C]zem,",
-      "[G]nebyli bychom [C]tu dnes."
+      "[C]Prší, prší, jen se leje,",
+      "kam koníčky pojedeme?",
+      "[F]Pojedeme [C]na luka,",
+      "[G]až kukačka [C]zakuká.",
+      "[C]Kukačka už zakukala,",
+      "má panenka zaplakala.",
+      "[F]Kukačko už [C]nekukej,",
+      "[G]má panenko [C]neplakej."
     ]
   },
   {
     id: "travicka-zelela", title: "Travička zelená", cat: "lidove", key: "C",
     lines: [
-      "[C]Travička zele[G]ná, to je moje [C]potěšení,",
-      "[C]kdybych já vě[F]děla, [C]že můj milý [G]doma [C]není."
+      "[C]Tra[G7]vička [C]zelená, [G7]to je moje [C]potěšení,",
+      "travič[G7]ka [C]zelená, [G7]to je moje [C]peřina.",
+      "[G7]Jak se zjara [C]začne pučit,",
+      "[G7]nechci já se [C]doma mučit.",
+      "Travič[G7]ka [C]zelená, [G7]to je moje [C]peřina."
     ]
   },
   {
-    id: "kdyby-byl-bavorov", title: "Kdyby byl Bavorov", cat: "lidove", key: "C",
+    id: "kdyby-byl-bavorov", title: "Kdyby byl Bavorov", cat: "lidove", key: "G",
     lines: [
-      "[C]Kdyby byl Bavorov [F]z [C]kamene,",
-      "[G]nebyl by [C]vytopen,",
-      "[C]ale on je [F]ze dře[C]va,",
-      "[G]ten celý [C]Bavorov."
+      "[G]Kdyby byl Bavorov, [D7]co jsou Vodňany,",
+      "[G]dal bych ti hubičku [D7]na obě stra[G]ny.",
+      "Ale že je [C]za vodou, [G]za vodičkou [D7]studenou,",
+      "[G]nedám ti, má milá, [D7]ani jedi[G]nou."
     ]
   },
   {
     id: "vyletela-holubicka", title: "Vyletěla holubička", cat: "lidove", key: "C",
     lines: [
-      "[C]Vyletěla holubička [F]ze [C]skály,",
-      "[C]vyletěla, [G]vyletě[C]la,",
-      "[C]když jsem já byl [F]malý [C]pacholek,",
-      "[G]pásl jsem [C]ovce."
+      "[C]Vyletěla [G7]holubička [Am]ze ská[Em]ly, [F]ze ská[C]ly.",
+      "[Dm]Probudila [C]modré oči [G7]ze spaní.",
+      "Kdyby byly modré oči nespaly, nespaly,",
+      "byly by tu holubičku dostaly.",
+      "Nebyla to holubička, byl to pták, byl to pták,",
+      "když mě nechceš, můj holečku, nechej tak."
     ]
   },
   {
     id: "pod-nasim-okynkem", title: "Pod naším okýnkem", cat: "lidove", key: "C",
     lines: [
-      "[C]Pod naším okýnkem [G]teče vodička,",
-      "[C]napájí [F]koně, [C]napájí [G]koně,",
-      "[C]napájí [F]koně [G]vrané [C]koně."
+      "[C]Pod naším okýnkem, [G7]rostou tam [C]dvě růže,",
+      "pod naším okýnkem, [G7]roste tam [C]štěp.",
+      "[F]Jsou na něm [C]jablíčka, [G7]trhá je [C]Ančička,",
+      "jsou dobrá, jsou sladká, [G7]jsou jako [C]med.",
+      "[C]Můj koníček vraný, [G7]ten nic nedě[C]lá,",
+      "jenom když mu řekneš, [G7]že jsi má mi[C]lá."
     ]
   },
   {
-    id: "tlouce-bubenicek", title: "Tluče bubeníček", cat: "hry", key: "C",
+    id: "tlouce-bubenicek", title: "Tluče bubeníček", cat: "hry", key: "D",
     lines: [
-      "[C]Tluče bubeníček, [G]tluče na bu[C]ben,",
-      "[C]ať se všichni [F]sejdou, [C]ať se všichni [G]sejdou,",
-      "[C]ať se všichni [F]sejdou, [G]kdo to [C]umí."
+      "[D]Tluče bubeníček,",
+      "[G]tluče [A7]na bu[D]ben.",
+      "[A]A svolává hochy,",
+      "hoši, [E]pojďte [A]ven.",
+      "[A7]Zahrajem si [D]na vojáky,",
+      "[A7]máme flinty [D]a bodáky.",
+      "[A7]Hola, hola, [Hm]hej,",
+      "[Em]nikdo [A7]nemeš[D]kej!"
     ]
   },
   {
-    id: "zlata-brana", title: "Zlatá brána", cat: "hry", key: "C",
+    id: "pasli-ovce-valasi", title: "Pásli ovce Valaši", cat: "lidove", key: "A",
     lines: [
-      "[C]Zlatá brána [G]otevřená,",
-      "[C]kdo do ní [F]vejde, [C]tomu hlava [G]sejde,",
-      "[C]ať je to [F]kdo [G]chce."
+      "[A]Pásli ovce valaši",
+      "při Betlemské salaši.",
+      "[A]Hajdom, hajdom, tydlidom,",
+      "hajdom, hajdom, ty[E]dli[A]dom.",
+      "[A]Anděl se jim ukázal,",
+      "do Betléma jít kázal.",
+      "[A]Hajdom, hajdom, tydlidom,",
+      "hajdom, hajdom, ty[E]dli[A]dom."
     ]
   },
   {
-    id: "pasli-ovce-valasi", title: "Pásli ovce Valaši", cat: "zvirata", key: "C",
+    id: "mela-babka", title: "Měla babka čtyři jabka", cat: "lidove", key: "D",
     lines: [
-      "[C]Pásli ovce Valaši [G]u Jablunky [C]na salaši,",
-      "[C]hajdom, hajdom, [F]hajdom, hajdom,",
-      "[G]pásli ovce [C]Valaši."
+      "[D]Měla babka čtyři jabka [A7]a dědoušek [D]jen dvě,",
+      "[D]dej mi, babko, jedno jabko, [A7]budeme mít [D]stejně.",
+      "[D]Měl dědoušek, měl kožíšek [A7]a babička [D]jupku,",
+      "[D]pojď, dědoušku, na mazurku, [A7]já si s tebou [D]dupnu."
     ]
   },
   {
-    id: "mela-babka", title: "Měla babka čtyři jabka", cat: "lidove", key: "C",
+    id: "jede-jede-postovsky", title: "Jede, jede poštovský panáček", cat: "lidove", key: "G",
     lines: [
-      "[C]Měla babka [G]čtyři jabka",
-      "[C]a dědoušek [F]dva,",
-      "[G]dej mi jedno, [C]babko,",
-      "[C]a já ti dám [G]dva."
-    ]
-  },
-  {
-    id: "jede-jede-postovsky", title: "Jede, jede poštovský panáček", cat: "lidove", key: "C",
-    lines: [
-      "[C]Jede, jede [F]poštovský [C]panáček,",
-      "[C]jede, jede [G]poštovský [C]pan,",
-      "[C]má koníčka [F]vraného, [C]vraného,",
-      "[G]na něm sedí [C]sám."
+      "[G]Jede, jede [D]poštovský [G]panáček,",
+      "jede, jede [D]poštovský [G]pán.",
+      "[D]Vpředu má [G]trubičku,",
+      "[D]vzadu má [G]truhličku,",
+      "jede, jede [D]poštovský [G]pán.",
+      "[D]Má vrané [G]koníčky",
+      "[D]jako dvě [G]rybičky,",
+      "jede, jede [D]do Roky[G]can."
     ]
   },
   {
     id: "kolo-kolo-mlynsky", title: "Kolo, kolo mlýnský", cat: "hry", key: "C",
     lines: [
-      "[C]Kolo, kolo [G]mlýnský, [C]za čtyři [G]rynský,",
-      "[C]kolo se nám [F]polámalo,",
-      "[C]mnoho škody [G]nadělalo,",
-      "[C]udělalo [G]bác!"
+      "[C]Kolo, kolo [G7]mlýnský, [C]za čtyři [G7]rýnský,",
+      "[C]kolo se nám [G7]polámalo, [C]mnoho škody [G7]nadělalo,",
+      "[C]udělalo [G7]bác!",
+      "[C]Vezmeme si [G7]hoblík, [C]pilku, [G7]zahrajem si [C]ještě [G7]chvilku,",
+      "[C]až to kolo [G7]spravíme, [C]tak si [G7]zazpí[C]váme."
     ]
   },
   {
     id: "na-ty-louce", title: "Na tý louce zelený", cat: "lidove", key: "G",
     lines: [
-      "[G]Na tý louce [C]zelený [G]pasou se tam [D7]jeleni,",
-      "[G]pasou se tam [C]jeleni, [G]jeleni [D7]rohatí,",
-      "[G]kdo je pase, [C]kdo je pase, [G]ten je [D7]zlatý."
-    ]
-  },
-  {
-    id: "okolo-trebone", title: "Okolo Třeboně", cat: "lidove", key: "G",
-    lines: [
-      "[G]Okolo Třeboně [C]lesy, [G]lesy,",
-      "[D7]okolo Třeboně [G]lesy,",
-      "[G]chodila tam moje [C]milá, [G]milá,",
-      "[D7]chodila tam moje [G]milá."
+      "[G]Na tý louce z[D7]elený, pasou se tam [G]jeleni,",
+      "[C]pase je tam [G]mysliveček v [D7]kamizolce [G]zelený.",
+      "Počkej, počkej, má milá, zastřelím ti jelena,",
+      "aby se ti zalíbila kamizolka zelená.",
+      "Ne tak, ne tak, myslivče, však to nejde od srdce,",
+      "ne tak ráda kamizolku, jako ráda myslivce."
     ]
   },
   {
     id: "spi-datko", title: "Spi, děťátko, spi", cat: "ukolebavky", key: "C",
     lines: [
-      "[C]Spi, děťátko, [F]spi,",
-      "[C]zavři očka [G]svý,",
-      "[C]až se ráno [F]probudíš,",
-      "[C]sluníčko [G]uvidíš,",
-      "[C]spi, děťátko, [C]spi."
+      "[C]Spi, dě[G7]ťátko, [C]spi,",
+      "[Dm]zavři [C]očka [G7]svý,",
+      "[C]pán Bůh bude [G7]s tebou spáti,",
+      "[C]andělíčci [G7]koléba[C]ti,",
+      "[C]spi, dě[G7]ťátko, [C]spi."
     ]
   },
   {
-    id: "my-jsme-mali-muzikanti", title: "My jsme malí muzikanti", cat: "hry", key: "C",
+    id: "my-jsme-muzikanti", title: "My jsme muzikanti", cat: "hry", key: "F",
     lines: [
-      "[C]My jsme malí muzikanti, [G]hrajem pěkně [C]sobě,",
-      "[C]jeden hraje [F]na housličky, [G]druhý na [C]trubku.",
-      "[C]Na housličky [F]cinky, cinky, [G]na trubku [C]trá,",
-      "[C]zahrajeme [F]vesele, [G]ať je [C]nám."
+      "[F]Já jsem muzikant a [C]přicházím k vám [F]z české země.",
+      "[F]My jsme muzikanti, [C]přicházíme k [F]vám.",
+      "[F]Já umím [C]hráti. [F]My umíme [C]taky.",
+      "[F]A to na [C]housle. [F]Jak se na ně [C]hraje?",
+      "[F]Fidli, fili, staré vidli, [C7]fidli, fidli, [F]housličky."
     ]
   },
 

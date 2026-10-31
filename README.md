@@ -68,5 +68,13 @@ tools/make_icons.py     # ikony add-onu
 Používá se české značení: `H` = H dur (B natural), `B` = B dur (Bb).
 Diagramy se generují z barré tvarů, takže fungují i pro transponované akordy.
 
+## Zdroje textů a akordů
+Říkanky jsou ověřené proti:
+- `zpevnik.beil.cz` — statický zpěvník s akordy
+- `spisnickou.cz` — akordy a texty
+- `akordy.kytary.cz` — akordy a texty
+
+Táborovky vycházejí ze *Zpěvníku k táboráku* (ccv.upol.cz) a zahraniční písně jsou tradicionály.
+
 ## Licence
 MIT — texty jsou lidové písně v public domain.

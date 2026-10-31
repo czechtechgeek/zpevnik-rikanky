@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.3.0 — 2026-10-31
+
+### Opraveno — ověřené texty a akordy říkanek
+Říkanky prošly kontrolou proti primárním zdrojům (`zpevnik.beil.cz`, `spisnickou.cz`,
+`akordy.kytary.cz`) a byly přepsány. Původní verze obsahovaly chyby z doslovu — například:
+
+- **Běží liška k Táboru**: správně „nese pytel zázvoru… ježek za ní pospíchá“ (ne brambory a jezevec).
+- **Já mám koně**: správně „to jsou koně mí“ (ne „na nich jezdím po polích“).
+- **Když jsem já sloužil**: správně „to první léto… vysloužil jsem si kuřátko“ (ne „u pána za rok“).
+- **Holka modrooká**: doplněny správné sloky (voda se točí, hastrmánek).
+- **Pod naším okýnkem**: správně „rostou tam dvě růže“ (ne „teče vodička“).
+- **Andulko šafářova**: správně „husičky nemáš doma“.
+- **Šla Nanynka do zelí**: správně Pepíček a rozšlapaný košíček.
+- **Pásli ovce Valaši**: správně betlémská verze s refrénem „hajdom, hajdom“.
+- **Vyletěla holubička**, **Tluče bubeníček**, **Prší, prší**, **Měla babka**, **Kolo, kolo mlýnský** — doplněny celé texty a akordy.
+- **My jsme malí muzikanti** nahrazeno skutečnou písní **My jsme muzikanti**.
+- **Zlatá brána** a **Okolo Třeboně** odstraněny — nepodařilo se dohledat spolehlivý zdroj not/akordů.
+
+Celkem 22 říkanek (z 24), 46 písní v aplikaci.
+
 ## 1.2.0 — 2026-10-31
 
 ### Přidáno
