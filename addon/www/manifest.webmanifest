@@ -1,0 +1,12 @@
+{
+  "name": "Zpěvník říkanek",
+  "short_name": "Zpěvník",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff8ef",
+  "theme_color": "#b4532a",
+  "lang": "cs",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

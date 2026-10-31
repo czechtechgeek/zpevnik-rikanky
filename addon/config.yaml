@@ -1,0 +1,23 @@
+name: "Zpěvník říkanek"
+version: "1.0.0"
+slug: "zpevnik_rikanky"
+description: "České říkanky s akordy pro kytaru — zpěvník s transpozicí, diagramy akordů a oblíbenými."
+url: "https://github.com/czechtechgeek/zpevnik-rikanky"
+arch:
+  - aarch64
+  - amd64
+  - armv7
+  - armhf
+  - i386
+startup: application
+boot: auto
+init: false
+ingress: true
+ingress_port: 8094
+panel_icon: "mdi:music-note"
+panel_title: "Zpěvník"
+panel_admin: false
+homeassistant_api: false
+auth_api: false
+options: {}
+schema: {}
