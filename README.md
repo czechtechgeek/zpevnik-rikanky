@@ -7,11 +7,14 @@ v kuchyni, v autě i v Home Assistantovi.
 - **48 písniček** ve šesti kategoriích: říkanky (zvířata, lidové, ukolébavky, hry), **táborovky** a **zahraniční klasika**
 - **Akordy přímo nad textem** — žádné přepisování, hraje se hned
 - **Diagramy akordů** (kytara, 6 strun) — prstoklady se vykreslují automaticky
+- **Klaviatura**: u každé písničky se zobrazí klávesy pro akord, dají se klikat a přehrát
+- **Noty** (houslový klíč) s názvy tónů u šesti písní + přehrání melodie
 - **Transpozice ±11 půltónů** včetně nápovědy na kapodastr
 - **Hledání bez diakritiky** (`kone` najde „koně“)
 - **Oblíbené** (hvězdička) — uložené v prohlížeči
 - **Větší písmo** pro čtení z dálky a tisk
 - **Náhodná písnička** — tlačítko 🎲
+- Noty a klaviatura fungují offline, zvuk jde přes Web Audio (bez souborů)
 - Funguje offline (PWA) a jako add-on v Home Assistantu
 
 ## Ovládání

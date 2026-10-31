@@ -384,7 +384,7 @@ window.SONGS = [
     ]
   },
   {
-    id: "when-the-saints", title: "When the Saints Go Marching In", cat: "zahranicni", key: "C",
+    id: "when-the-saints", title: "When the Saints Go Marching In", cat: "zahranicni", key: "C", melody: "C4:1 E4:1 F4:1 G4:2 | C4:1 E4:1 F4:1 G4:2 | C4:1 E4:1 F4:1 G4:1 E4:1 C4:1 E4:1 D4:2",
     lines: [
       "[C]Oh, when the saints go marching in,",
       "[C]oh, when the saints go marching [G7]in,",
@@ -402,7 +402,7 @@ window.SONGS = [
     ]
   },
   {
-    id: "old-macdonald", title: "Old MacDonald Had a Farm", cat: "zahranicni", key: "C",
+    id: "old-macdonald", title: "Old MacDonald Had a Farm", cat: "zahranicni", key: "C", melody: "G4:1 G4:1 G4:1 D4:1 E4:1 E4:1 D4:2 | H4:1 H4:1 A4:1 A4:1 G4:4 | D4:1 G4:1 G4:1 G4:1 D4:1 E4:1 E4:1 D4:2 | H4:1 H4:1 A4:1 A4:1 G4:4",
     lines: [
       "[C]Old MacDonald had a farm, [G7]E-I-E-I-[C]O,",
       "[C]and on that farm he had a cow, [G7]E-I-E-I-[C]O.",
@@ -412,7 +412,7 @@ window.SONGS = [
     ]
   },
   {
-    id: "twinkle-twinkle", title: "Twinkle, Twinkle, Little Star", cat: "zahranicni", key: "C",
+    id: "twinkle-twinkle", title: "Twinkle, Twinkle, Little Star", cat: "zahranicni", key: "C", melody: "C4:1 C4:1 G4:1 G4:1 A4:1 A4:1 G4:2 | F4:1 F4:1 E4:1 E4:1 D4:1 D4:1 C4:2 | G4:1 G4:1 F4:1 F4:1 E4:1 E4:1 D4:2 | G4:1 G4:1 F4:1 F4:1 E4:1 E4:1 D4:2 | C4:1 C4:1 G4:1 G4:1 A4:1 A4:1 G4:2 | F4:1 F4:1 E4:1 E4:1 D4:1 D4:1 C4:2",
     lines: [
       "[C]Twinkle, twinkle, [F]little [C]star, [G7]how I [C]wonder [G7]what you [C]are.",
       "[F]Up a[C]bove the [G7]world so [C]high, [F]like a [C]diamond [G7]in the [C]sky.",
@@ -420,21 +420,21 @@ window.SONGS = [
     ]
   },
   {
-    id: "row-your-boat", title: "Row, Row, Row Your Boat", cat: "zahranicni", key: "C",
+    id: "row-your-boat", title: "Row, Row, Row Your Boat", cat: "zahranicni", key: "C", melody: "C4:1 C4:1 C4:1 D4:1 E4:2 | E4:1 D4:1 E4:1 F4:1 G4:2 | C5:1 C5:1 C5:1 G4:1 G4:1 G4:1 E4:1 E4:1 E4:1 C4:1 C4:1 C4:1 | G4:1 F4:1 E4:1 D4:1 C4:2",
     lines: [
       "[C]Row, row, row your boat, [F]gently down the [C]stream,",
       "[C]merrily, merrily, merrily, merrily, [G7]life is but a [C]dream."
     ]
   },
   {
-    id: "london-bridge", title: "London Bridge Is Falling Down", cat: "zahranicni", key: "C",
+    id: "london-bridge", title: "London Bridge Is Falling Down", cat: "zahranicni", key: "C", melody: "G4:1 A4:1 G4:1 F4:1 E4:1 F4:1 G4:2 | D4:1 E4:1 F4:2 | E4:1 F4:1 G4:2 | G4:1 A4:1 G4:1 F4:1 E4:1 F4:1 G4:2 | D4:1 G4:1 E4:1 C4:2",
     lines: [
       "[C]London Bridge is [G7]falling down, [C]falling down, [G7]falling down,",
       "[C]London Bridge is [G7]falling down, my [C]fair [G7]la[C]dy."
     ]
   },
   {
-    id: "jingle-bells", title: "Jingle Bells", cat: "zahranicni", key: "C",
+    id: "jingle-bells", title: "Jingle Bells", cat: "zahranicni", key: "C", melody: "E4:1 E4:1 E4:2 | E4:1 E4:1 E4:2 | E4:1 G4:1 C4:1 D4:1 E4:4 | F4:1 F4:1 F4:1 F4:1 F4:1 E4:1 E4:1 E4:1 E4:1 D4:1 D4:1 E4:1 D4:2 G4:2",
     lines: [
       "[C]Dashing through the snow in a [F]one-horse open [C]sleigh,",
       "[C]o'er the fields we go, [G7]laughing all the way.",

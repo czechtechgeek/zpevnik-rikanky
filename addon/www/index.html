@@ -98,6 +98,20 @@
   .chunk .tx{white-space:pre}
   .ln.instr{color:var(--muted);font-style:italic;font-size:.9em}
   footer{text-align:center;color:var(--muted);font-size:12px;padding:18px 0 8px}
+
+  /* klávesy */
+  .keysbox{margin-top:18px;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:14px 14px 16px;box-shadow:var(--shadow)}
+  .keys-head{display:flex;align-items:center;gap:10px;margin:0 0 10px}
+  .keys-head h3{margin:0;font-size:16px;flex:1}
+  .keys-head .hint{margin:0}
+  .chord-pick{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+  .chord-pick button{border:1px solid var(--line);background:#fffaf3;color:var(--ink);
+    border-radius:10px;padding:6px 12px;font-weight:700;font-size:14px;cursor:pointer;color:var(--green)}
+  .chord-pick button.on{background:var(--green);border-color:var(--green);color:#fff}
+  .piano-scroll,.staff-scroll{overflow-x:auto;padding-bottom:4px}
+  .piano-scroll svg,.staff-scroll svg{display:block}
+  #melodyWrap{margin-top:16px;border-top:1px dashed var(--line);padding-top:12px}
   @media (max-width:520px){
     .lyrics{font-size:calc(var(--lyrics-size) - 1px);padding:16px 14px 18px}
     .song-head h2{font-size:22px}
@@ -152,11 +166,27 @@
     <p class="hint" id="capoHint"></p>
 
     <div class="diagrams" id="diagrams"></div>
+
+    <div class="keysbox">
+      <div class="keys-head">
+        <h3>🎹 Klávesy</h3>
+        <span class="hint" id="keysHint">Klikni na akord — ukážou se klávesy</span>
+      </div>
+      <div class="chord-pick" id="chordPick"></div>
+      <div class="piano-scroll"><div id="piano"></div></div>
+      <div id="melodyWrap" style="display:none">
+        <div class="keys-head">
+          <h3>Melodie</h3>
+          <button class="icon-btn" id="playMelody">▶ Přehrát</button>
+        </div>
+        <div class="staff-scroll" id="staff"></div>
+      </div>
+    </div>
     <div class="lyrics" id="lyrics"></div>
   </div>
 </main>
 
-<script src="data/songs.js"></script>
+<script src="data/songs.js?v=1.2.0"></script>
 <script>
 (function(){
   "use strict";
@@ -380,6 +410,8 @@
       return '<div class="dg"><div class="name">'+c+'</div>'+svgDiagram(c,104)+'</div>';
     }).join("");
 
+    renderKeys(s, chords);
+
     $("lyrics").innerHTML = s.lines.map(function(line){
       var chunks = parseChords(line);
       var html = chunks.map(function(c){
@@ -390,6 +422,186 @@
     }).join("");
   }
   function esc(t){ return (t||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+
+  /* ================= klávesy a noty ================= */
+  var LETTER = {C:0,D:1,E:2,F:3,G:4,A:5,H:6};
+  var WHITE_NOTES = ["C4","D4","E4","F4","G4","A4","H4","C5","D5","E5","F5","G5","A5","H5","C6"];
+  var BLACK_AFTER = {C:1,D:1,F:1,G:1,A:1};
+  var actx = null, melodyTimers = [];
+
+  function audio(){
+    if(!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+    if(actx.state === "suspended") actx.resume();
+    return actx;
+  }
+  function noteInfo(name){
+    var m = String(name).match(/^([A-H])([#b]?)(\d)$/);
+    if(!m) return null;
+    var pc = SEMI[m[1]] + (m[2] === "#" ? 1 : m[2] === "b" ? -1 : 0);
+    pc = ((pc % 12) + 12) % 12;
+    return {letter: m[1], acc: m[2], oct: parseInt(m[3],10), pc: pc,
+            midi: (parseInt(m[3],10) + 1) * 12 + pc};
+  }
+  function tone(midi, t0, dur, vol){
+    var a = audio(), o = a.createOscillator(), g = a.createGain();
+    o.type = "triangle";
+    o.frequency.value = 440 * Math.pow(2, (midi - 69) / 12);
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.linearRampToValueAtTime(vol || 0.16, t0 + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.001, t0 + Math.max(0.1, dur * 0.95));
+    o.connect(g); g.connect(a.destination);
+    o.start(t0); o.stop(t0 + Math.max(0.1, dur));
+  }
+
+  function chordPitches(name){
+    var p = chordParts(name); if(!p) return {pcs:[], root:null};
+    var q = p.q || "";
+    var iv;
+    if(q === "m") iv = [0,3,7];
+    else if(q === "m7") iv = [0,3,7,10];
+    else if(q === "7") iv = [0,4,7,10];
+    else if(q === "maj7") iv = [0,4,7,11];
+    else if(q === "dim") iv = [0,3,6];
+    else if(q === "sus4") iv = [0,5,7];
+    else iv = [0,4,7];
+    return {pcs: iv.map(function(i){ return (p.pc + i) % 12; }), root: p.pc};
+  }
+
+  function keyboardSVG(pcs, exact){
+    var wk = 27, w = WHITE_NOTES.length * wk + 2, h = 132;
+    var s = '<svg width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'">';
+    var whites = [];
+    WHITE_NOTES.forEach(function(n, i){
+      var info = noteInfo(n);
+      var on = (pcs && pcs.indexOf(info.pc) >= 0) || (exact && exact.indexOf(n) >= 0);
+      var x = i * wk + 1;
+      s += '<rect data-note="'+n+'" x="'+x+'" y="0" width="'+(wk-1)+'" height="'+h+
+           '" rx="3" fill="'+(on ? "#f3c9a8" : "#fffdf9")+'" stroke="#c9b6a2"/>';
+      if(on) s += '<rect data-note="'+n+'" x="'+x+'" y="'+(h-6)+'" width="'+(wk-1)+'" height="6" fill="#b4532a"/>';
+      s += '<text x="'+(x + wk/2)+'" y="'+(h-12)+'" text-anchor="middle" font-size="10" fill="#8a7460">'+n+'</text>';
+      whites.push({x:x, letter:n[0], oct:n.slice(-1), name:n});
+    });
+    whites.forEach(function(wk1, i){
+      if(i >= whites.length-1) return;
+      if(!BLACK_AFTER[wk1.letter]) return;
+      var bn = wk1.letter + "#" + wk1.oct;
+      var info = noteInfo(bn);
+      var on = (pcs && pcs.indexOf(info.pc) >= 0) || (exact && exact.indexOf(bn) >= 0);
+      var x = wk1.x + wk - 9;
+      s += '<rect data-note="'+bn+'" x="'+x+'" y="0" width="18" height="82" rx="3" fill="'+(on ? "#b4532a" : "#3a2f26")+'" stroke="#2b2118"/>';
+    });
+    s += '</svg>';
+    return s;
+  }
+
+  function drawPiano(el, pcs, exact){
+    el.innerHTML = keyboardSVG(pcs, exact);
+  }
+
+  function renderKeys(song, chords){
+    song = song || state.current; if(!song) return;
+    if(!chords) chords = songChords(song).map(transName);
+    $("chordPick").innerHTML = chords.map(function(c, i){
+      return '<button data-chord="'+c+'"'+(i===0?' class="on"':'')+'>'+c+'</button>';
+    }).join("");
+    var first = chords.length ? chordPitches(chords[0]).pcs : [];
+    drawPiano($("piano"), first, null);
+    $("keysHint").textContent = "Klikni na akord — ukážou se klávesy";
+    if(song.melody){
+      $("melodyWrap").style.display = "block";
+      $("staff").innerHTML = staffSVG(song.melody);
+    } else {
+      $("melodyWrap").style.display = "none";
+      $("staff").innerHTML = "";
+    }
+  }
+
+  function staffSVG(melody){
+    var tokens = melody.trim().split(/\s+/);
+    var noteW = 26, left = 34, gap = 8, systemH = 116, maxW = 660;
+    var systems = [], cur = {items: [], bars: [], x: left};
+    tokens.forEach(function(t){
+      if(t === "|"){ cur.bars.push(cur.x - 6); cur.x += 12; return; }
+      var m = t.match(/^([A-H][#b]?\d):([\d.]+)$/);
+      if(!m) return;
+      var info = noteInfo(m[1]); if(!info) return;
+      var beats = parseFloat(m[2]);
+      var adv = noteW * Math.min(2, Math.max(0.7, beats));
+      if(cur.x + adv > maxW && cur.items.length){
+        systems.push(cur);
+        cur = {items: [], bars: [], x: left};
+      }
+      cur.items.push({name: m[1], x: cur.x, beats: beats, info: info});
+      cur.x += adv;
+    });
+    systems.push(cur);
+
+    var w = 320;
+    systems.forEach(function(sy){ if(sy.x + 16 > w) w = sy.x + 16; });
+    var h = systems.length * systemH + 6;
+    var out = '<svg width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'">';
+
+    systems.forEach(function(sy, si){
+      var top = 18 + si * systemH;
+      var bottom = top + gap * 4;
+      for(var i = 0; i < 5; i++){
+        var ly = top + i * gap;
+        out += '<line x1="6" y1="'+ly+'" x2="'+(w-6)+'" y2="'+ly+'" stroke="#b9a794" stroke-width="1"/>';
+      }
+      out += '<text x="10" y="'+(top + gap * 3.7)+'" font-size="44" fill="#2b2118" font-family="serif">𝄞</text>';
+      sy.bars.forEach(function(bx){
+        out += '<line x1="'+bx+'" y1="'+top+'" x2="'+bx+'" y2="'+bottom+'" stroke="#b9a794" stroke-width="1.2"/>';
+      });
+      sy.items.forEach(function(it){
+        var p = (it.info.oct - 4) * 7 + LETTER[it.info.letter] - 2;
+        var y = bottom - p * (gap / 2);
+        var open = it.beats >= 2;
+        out += '<ellipse cx="'+it.x+'" cy="'+y+'" rx="6" ry="4.3" transform="rotate(-20 '+it.x+' '+y+')" fill="'+(open ? "#fffdf9" : "#2b2118")+'" stroke="#2b2118" stroke-width="1.4"/>';
+        var up = y > (top + gap * 2);
+        out += '<line x1="'+(it.x + 5.6)+'" y1="'+(y + (up ? -2 : 2))+'" x2="'+(it.x + 5.6)+'" y2="'+(up ? y - 30 : y + 30)+'" stroke="#2b2118" stroke-width="1.4"/>';
+        if(y > bottom + 0.5 || y < top - 0.5){
+          out += '<line x1="'+(it.x-10)+'" y1="'+y+'" x2="'+(it.x+10)+'" y2="'+y+'" stroke="#b9a794" stroke-width="1"/>';
+        }
+        out += '<text x="'+it.x+'" y="'+(top + systemH - 14)+'" text-anchor="middle" font-size="10" fill="#8a7460">'+it.name.replace(/\d/,"")+'</text>';
+      });
+    });
+    out += '</svg>';
+    return out;
+  }
+
+  function playChord(name){
+    var pcs = chordPitches(name).pcs;
+    var t0 = audio().currentTime + 0.02;
+    pcs.forEach(function(pc, i){
+      tone((4 + 1) * 12 + pc, t0 + i * 0.09, 0.55);
+    });
+  }
+
+  function playMelody(){
+    if(!state.current || !state.current.melody) return;
+    melodyTimers.forEach(clearTimeout); melodyTimers = [];
+    var tokens = state.current.melody.trim().split(/\s+/);
+    var beat = 60 / 96;
+    var t = audio().currentTime + 0.05, offset = 0, seq = [];
+    tokens.forEach(function(tok){
+      if(tok === "|") return;
+      var m = tok.match(/^([A-H][#b]?\d):([\d.]+)$/); if(!m) return;
+      var info = noteInfo(m[1]); if(!info) return;
+      var dur = parseFloat(m[2]) * beat;
+      tone(info.midi, t + offset, dur * 0.92, 0.18);
+      seq.push({at: (t + offset - audio().currentTime) * 1000, note: m[1]});
+      offset += dur;
+    });
+    var pcs = chordPitches(songChords(state.current)[0] || "C").pcs;
+    drawPiano($("piano"), pcs, []);
+    seq.forEach(function(ev){
+      melodyTimers.push(setTimeout(function(){ drawPiano($("piano"), [], [ev.note]); }, Math.max(0, ev.at)));
+    });
+    melodyTimers.push(setTimeout(function(){
+      drawPiano($("piano"), pcs, []);
+    }, (offset + 0.3) * 1000));
+  }
 
   /* ---- events ---- */
   $("q").addEventListener("input", function(e){ state.q=e.target.value; renderList(); });
@@ -415,6 +627,20 @@
   $("fontUp").addEventListener("click", function(){ setFont(state.font+2); });
   $("fontDown").addEventListener("click", function(){ setFont(state.font-2); });
   $("printBtn").addEventListener("click", function(){ window.print(); });
+  $("chordPick").addEventListener("click", function(e){
+    var b = e.target.closest("[data-chord]"); if(!b) return;
+    [].forEach.call($("chordPick").children, function(x){ x.classList.remove("on"); });
+    b.classList.add("on");
+    var name = b.dataset.chord;
+    drawPiano($("piano"), chordPitches(name).pcs, null);
+    playChord(name);
+  });
+  $("piano").addEventListener("click", function(e){
+    var k = e.target.closest("[data-note]"); if(!k) return;
+    var info = noteInfo(k.dataset.note); if(!info) return;
+    tone(info.midi, audio().currentTime + 0.01, 0.5, 0.2);
+  });
+  $("playMelody").addEventListener("click", playMelody);
   window.addEventListener("hashchange", route);
 
   function setFont(px){

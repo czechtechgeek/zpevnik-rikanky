@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.0 — 2026-10-31
+
+### Přidáno
+- **Klaviatura u každé písničky:** akordová tlačítka, zvýraznění kláves (C4–C6), kliknutí na klávesu zahraje tón, akord se přehraje arpeggiem.
+- **Noty pro klávesy:** houslový klíč, noty s nožičkami, taktové čáry, pomocné linky, názvy tónů pod notami, zalamování do systémů.
+- **Přehrání melodie** (Web Audio, 96 BPM) se současným zvýrazňováním kláves.
+- Melodie zatím u 6 písní: Twinkle Twinkle, Row Your Boat, London Bridge, Jingle Bells, Old MacDonald, When the Saints.
+
+### Opraveno
+- Service worker je u navigace a `songs.js` **network-first** — po aktualizaci se už nezobrazuje stará verze z cache.
+- `songs.js` má `no-cache` a v HTML je verzovací parametr (`?v=1.2.0`), takže update je vidět okamžitě.
+
 ## 1.1.0 — 2026-10-31
 
 ### Přidáno
