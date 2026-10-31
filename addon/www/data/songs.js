@@ -210,5 +210,258 @@ window.SONGS = [
       "[C]Na housličky [F]cinky, cinky, [G]na trubku [C]trá,",
       "[C]zahrajeme [F]vesele, [G]ať je [C]nám."
     ]
+  },
+
+  /* ---------- TÁBOROVKY ---------- */
+  {
+    id: "tri-krize", title: "Tři kříže", cat: "taborove", key: "Dm",
+    lines: [
+      "[Dm]Dávám sbohem všem [C]břehům prokla[Dm]tejm,",
+      "[C]který v drápech má [Dm]ďábel sám.",
+      "[Dm]Bílou přídí šalupa [C]My Grave",
+      "[Dm]mířím k útesům, [C]který [Dm]znám.",
+      "[F]Jen tři kříže z [C]bílýho kamení",
+      "[Am]snad do písku [Dm]poskládal,",
+      "[F]slzy v očích měl a v [C]ruce znavený,",
+      "[Am]lodní deník, co [Dm]sám do něj [C]psal."
+    ]
+  },
+  {
+    id: "hlidac-krav", title: "Hlídač krav", cat: "taborove", key: "D",
+    lines: [
+      "[D]Když jsem byl malý, říkali mi naši:",
+      "[D]„Dobře se uč a jez chytrou kaši,",
+      "[G]až jednou vyrosteš, [A]budeš doktorem [D]práv.“",
+      "[D]Takovej doktor si sedí pěkně v suchu,",
+      "[D]bere velký peníze a škrábe se v uchu,",
+      "[G]já jim ale na to řek: [A]„Chci být hlídačem [D]krav.“",
+      "[D]Já chci mít čapku s bambulí nahoře,",
+      "[D]jíst kaštany, mýt se v lavoře,",
+      "[G]od rána po celý [A]den, zpívat si [D]jen."
+    ]
+  },
+  {
+    id: "bedna-od-whisky", title: "Bedna od whisky", cat: "taborove", key: "Am",
+    lines: [
+      "[Am]Dneska mi už fóry [C]ňák nejdou přes pys[Am]ky,",
+      "[Am]stojím s dlouhou kravatou [E]na bedně od whis[Am]ky.",
+      "[Am]Stojím s dlouhým obojkem [C]jak stájovej pinč,",
+      "[Am]tu kravatu, co nosím, [E]mi navlík soudce [Am]Linč.",
+      "[A]Tak kopni do tý bedny, [D]ať panstvo nečeká,",
+      "[E]jsou dlouhý schody do nebe [A]a štreka daleká.",
+      "[A]Do nebeskýho báru [D]já sucho v krku mám,",
+      "[E]tak kopni do tý bedny, [A]ať na cestu se dám."
+    ]
+  },
+  {
+    id: "okor", title: "Okoř", cat: "taborove", key: "D",
+    lines: [
+      "[D]Na Okoř je cesta jako žádná ze sta,",
+      "[A7]vroubená je stroma[D]ma (stromama),",
+      "[D]když jdu po ní v létě, samoten na světě,",
+      "[A7]sotva pletu noha[D]ma (nohama).",
+      "[G]Na konci té cesty trnité [D]stojí krčma jako hrad,",
+      "[E7]tam zapadli trampi, hladoví a sešlí, [A7]začli sobě noto[D]vat.",
+      "[D]Na hradě Okoři [A7]světla už nehoří,",
+      "[D]bílá paní šla už [A7]dávno [D]spát."
+    ]
+  },
+  {
+    id: "cervena-reka", title: "Červená řeka", cat: "taborove", key: "C",
+    lines: [
+      "[C]Pod tou skálou, kde proud řeky [C7]syčí",
+      "[F]a kde ční červený [C]kamenní,",
+      "[C]žije ten, co mi jen [C7]srdce ničí,",
+      "[G7]koho já ráda mám k zbláz[C]nění.",
+      "[C]Často k nám jezdívá s [C7]kytkou růží,",
+      "[F]nejhezčí z kovbojů v [C]okolí,",
+      "[C]vestu má ušitou z [C7]hadích kůží,",
+      "[G7]bítej pás, na něm pár pisto[C]lí."
+    ]
+  },
+  {
+    id: "tisic-mil", title: "Tisíc mil", cat: "taborove", key: "G",
+    lines: [
+      "[G]V nohách mám už tisíc [Em]mil,",
+      "[Am]stopy déšť a vítr [C]smyl",
+      "[Am]a můj kůň i já jsme [D]cestou znave[G]ni.",
+      "[G]Těch tisíc mil, těch tisíc [Em]mil",
+      "[Am]má jeden směr a jeden [C]cíl,",
+      "[Am]jeden cíl, to malý bílý [D]sta[G]vení."
+    ]
+  },
+  {
+    id: "poveste-ho-vejs", title: "Pověste ho vejš", cat: "taborove", key: "Em",
+    lines: [
+      "[Em]Pověste ho vejš, ať se houpá,",
+      "[G]pověste ho vejš, ať má [D]dost,",
+      "[Am]pověste ho vejš, ať se houpá,",
+      "[Em]že tu byl nezvanej [D]host.",
+      "[G]Pověste ho za El Paso, [D]za Snídani v trávě a Lodní zvon,",
+      "[Am]za to, že neoplýval [Em]krásou,",
+      "[C]a že měl country [H7]rád a že se uměl smát i [Em]vám."
+    ]
+  },
+  {
+    id: "stanky", title: "Stánky", cat: "taborove", key: "D",
+    lines: [
+      "[D]U stánků na levnou [G]krásu,",
+      "[D]postávaj a smějou se [Gm]času,",
+      "[D]s cigaretou a s holkou, [A7]co nemá kam [D]jít.",
+      "[G]Jen zahlídli svět, maj na duši [A7]vrásky,",
+      "[D]tak málo je, tak málo je [Gm]lásky,",
+      "[D]ztracená víra hrozny z vinic [A7]neposbí[D]rá."
+    ]
+  },
+  {
+    id: "severni-vitr", title: "Severní vítr", cat: "taborove", key: "C",
+    lines: [
+      "[C]Jdu s děravou patou, mám [Am]horečku zlatou,",
+      "[F]jsem chudý, jsem sláb, [C]nemocen.",
+      "[C]Hlava mě pálí a v [Am]modravé dáli",
+      "[F]se leskne a [G]třpytí můj [C]sen.",
+      "[C]Severní vítr je [C7]krutý, [F]počítej, lásko má, [C]s tím.[G7]",
+      "[C]K nohám ti dám [C7]zlaté pruty, [F]nebo se vůbec nevr[C]tím.[G]"
+    ]
+  },
+  {
+    id: "blaznova-ukolebavka", title: "Bláznova ukolébavka", cat: "taborove", key: "D",
+    lines: [
+      "[D]Máš, má ovečko, [A]dávno spát, [G]už píseň ptáků [D]končí,",
+      "[D]kvůli nám přestal i [A]vítr vát, [G]jen můra zírá [D]zvenčí,",
+      "[A]já znám její zášť, [G]tak vyhledej skrýš,",
+      "[A]zas má bílej plášť [G]a v okně je [A]mříž.",
+      "[D]Máš, má ovečko, [A]dávno spát, [G]a můžeš hřát, ty mě můžeš [E]hřát,",
+      "[D]vždyť přijdou se [G]ptát, zítra zas přijdou se [D]ptát,[G]",
+      "[D]jestli ty v mých představách už [G]mizíš.[D]"
+    ]
+  },
+
+  /* ---------- ZAHRANIČNÍ KLASIKA ---------- */
+  {
+    id: "oh-susanna", title: "Oh! Susanna", cat: "zahranicni", key: "C",
+    lines: [
+      "[C]I come from Alabama with my [G7]banjo on my knee,",
+      "[C]I'm going to Louisiana, [G7]my Susanna [C]for to see.",
+      "[C]Oh, Susanna, [G7]don't you cry for [C]me,",
+      "For I [C7]come from Alabama with my [G7]banjo on my [C]knee."
+    ]
+  },
+  {
+    id: "clementine", title: "Oh My Darling, Clementine", cat: "zahranicni", key: "C",
+    lines: [
+      "[C]In a cavern, in a canyon, [F]excavating for a [C]mine,",
+      "[C]Dwelt a miner, forty-niner, [G7]and his daughter Clemen[C]tine.",
+      "[C]Oh my darling, oh my [F]darling, oh my darling Clemen[C]tine,",
+      "[C]You are lost and gone for[G7]ever, dreadful sorry Clemen[C]tine."
+    ]
+  },
+  {
+    id: "kumbaya", title: "Kumbaya", cat: "zahranicni", key: "C",
+    lines: [
+      "[C]Kumbaya, my Lord, [G]kumbaya.",
+      "[C]Kumbaya, my Lord, [G]kumbaya.",
+      "[C]Kumbaya, my Lord, [F]kumbaya.",
+      "[C]Oh, Lord, [G]kumbaya.[C]"
+    ]
+  },
+  {
+    id: "michael-row", title: "Michael Row the Boat Ashore", cat: "zahranicni", key: "C",
+    lines: [
+      "[C]Michael, row the boat a[F]shore, [C]hallelu[G]jah.",
+      "[C]Michael, row the boat a[F]shore, [C]hallelu[G]jah.[C]",
+      "[C]Sister, help to trim the [F]sail, [C]hallelu[G]jah.",
+      "[C]Sister, help to trim the [F]sail, [C]hallelu[G]jah.[C]"
+    ]
+  },
+  {
+    id: "down-by-the-riverside", title: "Down by the Riverside", cat: "zahranicni", key: "C",
+    lines: [
+      "[C]Gonna lay down my burden, [F]down by the [C]riverside,",
+      "[C]down by the riverside, [G]down by the [C]riverside.",
+      "[C]Gonna lay down my burden, [F]down by the [C]riverside,",
+      "[C]ain't gonna study [G]war no [C]more."
+    ]
+  },
+  {
+    id: "when-the-saints", title: "When the Saints Go Marching In", cat: "zahranicni", key: "C",
+    lines: [
+      "[C]Oh, when the saints go marching in,",
+      "[C]oh, when the saints go marching [G7]in,",
+      "Oh, Lord, I [C]want to be in that [F]number,",
+      "when the [C]saints go [G7]marching [C]in."
+    ]
+  },
+  {
+    id: "coming-round-the-mountain", title: "She'll Be Coming Round the Mountain", cat: "zahranicni", key: "C",
+    lines: [
+      "[C]She'll be coming round the mountain when she comes,",
+      "[C]she'll be coming round the mountain when she [G7]comes,",
+      "She'll be [C]coming round the mountain, she'll be [F]coming round the mountain,",
+      "she'll be [C]coming round the [G7]mountain when she [C]comes."
+    ]
+  },
+  {
+    id: "old-macdonald", title: "Old MacDonald Had a Farm", cat: "zahranicni", key: "C",
+    lines: [
+      "[C]Old MacDonald had a farm, [G7]E-I-E-I-[C]O,",
+      "[C]and on that farm he had a cow, [G7]E-I-E-I-[C]O.",
+      "[C]With a moo-moo here and a moo-moo there,",
+      "[F]here a moo, there a moo, [C]everywhere a moo-moo,",
+      "[C]Old MacDonald had a farm, [G7]E-I-E-I-[C]O."
+    ]
+  },
+  {
+    id: "twinkle-twinkle", title: "Twinkle, Twinkle, Little Star", cat: "zahranicni", key: "C",
+    lines: [
+      "[C]Twinkle, twinkle, [F]little [C]star, [G7]how I [C]wonder [G7]what you [C]are.",
+      "[F]Up a[C]bove the [G7]world so [C]high, [F]like a [C]diamond [G7]in the [C]sky.",
+      "[C]Twinkle, twinkle, [F]little [C]star, [G7]how I [C]wonder [G7]what you [C]are."
+    ]
+  },
+  {
+    id: "row-your-boat", title: "Row, Row, Row Your Boat", cat: "zahranicni", key: "C",
+    lines: [
+      "[C]Row, row, row your boat, [F]gently down the [C]stream,",
+      "[C]merrily, merrily, merrily, merrily, [G7]life is but a [C]dream."
+    ]
+  },
+  {
+    id: "london-bridge", title: "London Bridge Is Falling Down", cat: "zahranicni", key: "C",
+    lines: [
+      "[C]London Bridge is [G7]falling down, [C]falling down, [G7]falling down,",
+      "[C]London Bridge is [G7]falling down, my [C]fair [G7]la[C]dy."
+    ]
+  },
+  {
+    id: "jingle-bells", title: "Jingle Bells", cat: "zahranicni", key: "C",
+    lines: [
+      "[C]Dashing through the snow in a [F]one-horse open [C]sleigh,",
+      "[C]o'er the fields we go, [G7]laughing all the way.",
+      "[C]Bells on bobtail ring, [F]making spirits [C]bright,",
+      "[C]what fun it is to ride and sing a [G7]sleighing song to[C]night!",
+      "[C]Jingle bells, jingle bells, [F]jingle all the [C]way,",
+      "[C]oh, what fun it is to ride in a [G7]one-horse open [C]sleigh!"
+    ]
+  },
+  {
+    id: "auld-lang-syne", title: "Auld Lang Syne", cat: "zahranicni", key: "C",
+    lines: [
+      "[C]Should auld acquaintance be for[F]got, and [C]never brought to [G]mind?",
+      "[C]Should auld acquaintance be for[F]got, and [C]days of [G]auld lang [C]syne?",
+      "[C]For auld lang [G]syne, my dear, for [C]auld lang [F]syne,",
+      "[C]we'll tak a cup o' [F]kindness yet for [C]auld lang [G]syne.[C]"
+    ]
+  },
+  {
+    id: "swing-low", title: "Swing Low, Sweet Chariot", cat: "zahranicni", key: "C",
+    lines: [
+      "[C]Swing low, sweet chari[F]ot, [C]coming for to carry me [G]home.",
+      "[C]Swing low, sweet chari[F]ot, [C]coming for to [G]carry me [C]home.",
+      "[C]I looked over Jordan and [F]what did I see,",
+      "[C]coming for to carry me [G]home?",
+      "[C]A band of angels [F]coming after me,",
+      "[C]coming for to [G]carry me [C]home."
+    ]
   }
 ];

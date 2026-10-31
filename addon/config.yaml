@@ -1,5 +1,5 @@
 name: "Zpěvník říkanek"
-version: "1.0.0"
+version: "1.1.0"
 slug: "zpevnik_rikanky"
 description: "České říkanky s akordy pro kytaru — zpěvník s transpozicí, diagramy akordů a oblíbenými."
 url: "https://github.com/czechtechgeek/zpevnik-rikanky"

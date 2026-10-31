@@ -4,7 +4,7 @@
 v kuchyni, v autě i v Home Assistantovi.
 
 ## Co umí
-- **24 písniček** rozdělených na zvířata, lidové, ukolébavky a hry
+- **48 písniček** ve šesti kategoriích: říkanky (zvířata, lidové, ukolébavky, hry), **táborovky** a **zahraniční klasika**
 - **Akordy přímo nad textem** — žádné přepisování, hraje se hned
 - **Diagramy akordů** (kytara, 6 strun) — prstoklady se vykreslují automaticky
 - **Transpozice ±11 půltónů** včetně nápovědy na kapodastr
@@ -18,7 +18,7 @@ v kuchyni, v autě i v Home Assistantovi.
 | Prvek | Co dělá |
 |---|---|
 | 🔍 hledání | filtruje podle názvu i textu, ignoruje diakritiku |
-| štítky | Zvířata / Lidové / Ukolébavky / Hry |
+| štítky | Zvířata / Lidové / Ukolébavky / Hry / Táborovky / Zahraniční |
 | ★ | oblíbené písničky |
 | − / + | transpozice po půltónech |
 | A− / A+ | velikost textu |
@@ -38,7 +38,7 @@ Písničky jsou v `data/songs.js`. Formát:
 {
   id: "moje-pisnicka",
   title: "Moje písnička",
-  cat: "lidove",            // zvirata | lidove | ukolebavky | hry
+  cat: "lidove",            // zvirata | lidove | ukolebavky | hry | taborove | zahranicni
   key: "C",
   lines: [
     "[C]První řádek [G]textu,",
